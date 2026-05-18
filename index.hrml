@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroStrata | Layered Skin Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = { darkMode: 'class' }
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .text-strata {
+            background: linear-gradient(to bottom, #10b981 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen">
+
+    <nav class="flex justify-between items-center px-10 py-8 max-w-7xl mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 glass rounded-2xl flex items-center justify-center relative border-emerald-500/30">
+                <i class="fas fa-layer-group text-emerald-500 text-xl"></i>
+                <div class="absolute -top-1 -right-1 h-3 w-3 bg-indigo-500 rounded-full animate-pulse"></div>
+            </div>
+            <span class="text-3xl font-bold tracking-tighter">NEURO<span class="text-strata">STRATA</span></span>
+        </div>
+        <div class="flex gap-8 items-center text-sm font-bold tracking-widest uppercase">
+            <a href="login.html" class="hover:text-emerald-500 transition">Clinical Access</a>
+            <button onclick="location.href='register.html'" class="px-6 py-3 bg-emerald-600 rounded-xl hover:bg-emerald-500 transition shadow-lg shadow-emerald-500/20">
+                New Session
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-10 py-12">
+        <div class="grid grid-cols-12 gap-6">
+            
+            <div class="col-span-12 lg:col-span-8 glass rounded-[3rem] p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-12 opacity-10">
+                    <i class="fas fa-microscope text-[12rem]"></i>
+                </div>
+                <div class="relative z-10 space-y-6">
+                    <h2 class="text-slate-500 font-bold uppercase tracking-[0.4em] text-xs">Medical AI Terminal</h2>
+                    <h1 class="text-7xl font-bold leading-none tracking-tighter">
+                        Multi-Layer <br> <span class="text-strata">Dermal Analysis.</span>
+                    </h1>
+                    <p class="text-slate-400 text-lg max-w-md">
+                        Autonomous detection of cutaneous malignancies across all five strata of the epidermis.
+                    </p>
+                    <div class="pt-6">
+                        <button onclick="location.href='register.html'" class="px-10 py-5 bg-white text-black rounded-2xl font-black hover:scale-105 transition active:scale-95">
+                            INITIALIZE SCAN
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-12 lg:col-span-4 space-y-6">
+                <div class="glass rounded-[3rem] p-10 flex flex-col justify-between h-[220px] border-l-4 border-l-emerald-500">
+                    <span class="text-slate-500 font-bold text-xs uppercase tracking-widest">Model Precision</span>
+                    <div class="text-6xl font-bold">99.1%</div>
+                    <p class="text-[10px] text-slate-500 italic">Validated against ISIC 2024 Dataset</p>
+                </div>
+                
+                <div class="glass rounded-[3rem] p-10 flex flex-col justify-center h-[220px] bg-indigo-600/5 border-l-4 border-l-indigo-500">
+                    <div class="flex items-center gap-4">
+                        <i class="fas fa-shield-halved text-4xl text-indigo-500"></i>
+                        <div>
+                            <h4 class="font-bold">E2E Encryption</h4>
+                            <p class="text-xs text-slate-500">DICOM standard compliant data handling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-12 md:col-span-4 glass rounded-[2.5rem] p-8">
+                <i class="fas fa-brain text-emerald-500 mb-4"></i>
+                <h4 class="font-bold mb-1">Neural Triage</h4>
+                <p class="text-xs text-slate-400">Instant prioritization of high-risk cases for practitioners.</p>
+            </div>
+            <div class="col-span-12 md:col-span-4 glass rounded-[2.5rem] p-8">
+                <i class="fas fa-dna text-indigo-500 mb-4"></i>
+                <h4 class="font-bold mb-1">Genetic Mapping</h4>
+                <p class="text-xs text-slate-400">Contextual analysis based on patient biometric data.</p>
+            </div>
+            <div class="col-span-12 md:col-span-4 glass rounded-[2.5rem] p-8">
+                <i class="fas fa-file-medical text-emerald-500 mb-4"></i>
+                <h4 class="font-bold mb-1">ABHA Ready</h4>
+                <p class="text-xs text-slate-400">Seamlessly linked with the National Health Account of India.</p>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
