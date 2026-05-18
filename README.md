@@ -1,6 +1,6 @@
 ## 🚀 REVOLUTIONIZING SKINCANCER DETECTION WITH MACHINE LEARNING
 
-**NeuroStrata** is an advanced AI-driven medical prototype designed for early skin cancer detection and intelligent dermatology triage. The platform analyzes dermoscopic images, simulates machine learning–based risk assessment, and provides a complete clinical workflow from patient onboarding to automated diagnostic report generation.
+**NeuroStrata** is an advanced AI-driven medical system designed for early skin cancer detection and intelligent dermatology triage. The platform analyzes dermoscopic images, simulates machine learning–based risk assessment, and provides a complete clinical workflow from patient onboarding to automated diagnostic report generation.
 
 ### ✨ Highlights
 - 🔬 AI-based skin lesion classification (Benign / Malignant)
