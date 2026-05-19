@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroStrata | Scan History</title>
+    <script src="https://cdn.tailwindcss.com\"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f1f5f9; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .malignant-border { border-left: 4px solid #ef4444; }
+        .benign-border { border-left: 4px solid #10b981; }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 flex items-center justify-center">
+    <div class="max-w-3xl w-full glass rounded-[2.5rem] p-6 md:p-10 space-y-8">
+        
+        <div>
+            <span class="text-[10px] font-bold text-emerald-400 tracking-widest uppercase block mb-2">Longitudinal Analysis Module</span>
+            <h2 class="text-3xl font-bold tracking-tight">Chronological Structural Timeline</h2>
+            <p class="text-xs text-slate-400 mt-1">Reviewing sequential morphology mutations over the tracked patient lifecycle matrix.</p>
+        </div>
+
+        <div class="space-y-4 relative before:absolute before:left-6 before:top-2 before:bottom-2 before:w-0.5 before:bg-white/5">
+            
+            <div onclick="location.href='06-res.html'" class="relative glass p-5 rounded-2xl flex items-center justify-between gap-4 cursor-pointer hover:bg-white/5 transition malignant-border ml-2 pl-6">
+                <div class="flex-grow">
+                    <p class="text-[9px] text-red-400 font-bold uppercase tracking-widest">May 12, 2026</p>
+                    <h4 class="font-bold text-base mt-0.5">Critical Risk Escalation Flagged</h4>
+                    <p class="text-[10px] text-slate-500 font-mono">Scan Reference ID: #NS-9912-M</p>
+                </div>
+                <div class="text-right"><p class="text-xs font-bold text-red-500 uppercase font-mono">97.2% RISK</p></div>
+            </div>
+
+            <div onclick="location.href='05-result.html'" class="relative glass p-5 rounded-2xl flex items-center justify-between gap-4 cursor-pointer hover:bg-white/5 transition benign-border ml-2 pl-6">
+                <div class="flex-grow">
+                    <p class="text-[9px] text-emerald-400 font-bold uppercase tracking-widest">Feb 02, 2026</p>
+                    <h4 class="font-bold text-base mt-0.5">Multi-Strata Base Evaluation</h4>
+                    <p class="text-[10px] text-slate-500 font-mono">Scan Reference ID: #NS-7721-B</p>
+                </div>
+                <div class="text-right"><p class="text-xs font-bold text-emerald-400 uppercase font-mono">Stable</p></div>
+            </div>
+
+        </div>
+
+        <div class="p-5 bg-emerald-500/5 rounded-2xl border border-emerald-500/10 flex flex-col gap-1 text-xs">
+            <h5 class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Sequential Variance Insight</h5>
+            <p class="text-slate-400 leading-relaxed">Lesion dimension profiles evaluated at the shoulder tissue node demonstrate structural boundary shifts of <span class="text-white font-bold">+2.4% over a 90-day trajectory windows</span>. Immediate biopsy verification is advised.</p>
+        </div>
+
+        <div class="pt-4 border-t border-white/5 flex">
+            <button onclick="location.href='03-dashboard.html'" class="w-full py-4 glass rounded-xl font-bold text-xs uppercase tracking-wider text-slate-400 hover:text-white transition flex items-center justify-center gap-2">
+                <i class="fas fa-th-large"></i> Return to Command Center
+            </button>
+        </div>
+    </div>
+</body>
+</html>
