@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroStrata | Official Clinical Report</title>
+    <script src="https://cdn.tailwindcss.com\"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .report-page { background: white; border-top: 8px solid #10b981; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05); }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        @media print { .no-print { display: none; } body { background: white; p: 0; } .report-page { border: none; box-shadow: none; max-width: 100%; width: 100%; margin: 0; padding: 0; } }
+    </style>
+</head>
+<body class="p-4 md:p-12 flex flex-col items-center">
+
+    <div class="max-w-4xl w-full report-page rounded-xl p-8 md:p-12 space-y-8 border border-slate-200">
+        <div class="flex justify-between items-start border-b border-slate-100 pb-6">
+            <div>
+                <div class="flex items-center gap-2 text-emerald-600 logo-font font-bold text-xl uppercase tracking-wider">
+                    <i class="fas fa-shield-halved"></i> NeuroStrata Engine
+                </div>
+                <p class="text-xs text-slate-400 mt-1 uppercase tracking-widest font-semibold">Automated Diagnostic Triage Ledger</p>
+            </div>
+            <div class="text-right text-xs text-slate-500 space-y-0.5 font-medium">
+                <p><b>Report ID:</b> #REP-88201-A4</p>
+                <p><b>Date String:</b> May 18, 2026</p>
+                <p><b>Standard Pipeline:</b> Core_CNN_V5.4</p>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Patient Stratification Profile</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-50 p-4 rounded-xl text-xs font-medium border border-slate-100">
+                <div><p class="text-slate-400 mb-0.5">Subject Identity</p><p class="font-bold text-slate-800">John Doe</p></div>
+                <div><p class="text-slate-400 mb-0.5">Age Reference</p><p class="font-bold text-slate-800">34 Years</p></div>
+                <div><p class="text-slate-400 mb-0.5">Epidermal Scale</p><p class="font-bold text-slate-800">Fitzpatrick Type III</p></div>
+                <div><p class="text-slate-400 mb-0.5">Data Consent</p><p class="text-emerald-600 font-bold uppercase">DPDP_SECURE</p></div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Model Inference Scores</h3>
+            <div class="border border-slate-100 rounded-xl overflow-hidden text-xs">
+                <div class="grid grid-cols-3 bg-slate-50 font-bold text-slate-500 border-b border-slate-100 p-3 uppercase tracking-wider">
+                    <div>Metric Parameter</div><div>Evaluated Matrix State</div><div class="text-right">Reference Baselines</div>
+                </div>
+                <div class="grid grid-cols-3 p-3 border-b border-slate-100 font-medium">
+                    <div class="font-bold text-slate-700">Triage Assignment</div><div class="text-emerald-600 font-bold font-mono">94.8% BENIGN STATUS</div><div class="text-right text-slate-400">Binary Classifier Target</div>
+                </div>
+                <div class="grid grid-cols-3 p-3 border-b border-slate-100 font-medium">
+                    <div class="font-bold text-slate-700">Asymmetry Vector</div><div>0.11 Spatial Mirror Score</div><div class="text-right text-slate-400">&lt; 0.50 Threshold</div>
+                </div>
+                <div class="grid grid-cols-3 p-3 border-b border-slate-100 font-medium">
+                    <div class="font-bold text-slate-700">Perimeter Continuity</div><div>Regular Structural Boundaries</div><div class="text-right text-slate-400">Non-Jagged Profile</div>
+                </div>
+                <div class="grid grid-cols-3 p-3 font-medium">
+                    <div class="font-bold text-slate-700">Lesion Diameter</div><div>3.2 Millimeters spatial calibration</div><div class="text-right text-slate-400">&lt; 6.00 mm Standard</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-end border-t border-slate-100 pt-8 mt-12">
+            <div>
+                <div class="w-48 h-8 border-b border-slate-200 mb-1 flex items-center italic text-slate-400 logo-font text-sm">NeuroStrata Core Engine</div>
+                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">System Authenticated Signature Hash</p>
+            </div>
+            <div class="text-right">
+                <div class="h-14 w-14 border border-slate-200 flex items-center justify-center ml-auto mb-2 rounded-lg bg-slate-50"><i class="fas fa-qrcode text-2xl text-slate-400"></i></div>
+                <p class="text-[9px] font-mono text-slate-400 uppercase tracking-tight">SECURE_RE_HASH_SHA256_8F2A9</p>
+            </div>
+        </div>
+
+        <div class="no-print pt-6 border-t border-slate-100 flex gap-4">
+            <button onclick="location.href='03-dashboard.html'" class="flex-1 border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition">Return to Command Hub</button>
+            <button onclick="window.print()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition shadow-lg shadow-emerald-500/10"><i class="fas fa-print mr-1"></i> Print Workstation File</button>
+        </div>
+    </div>
+</body>
+</html>
