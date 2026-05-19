@@ -13,7 +13,7 @@
 
 ### 🛠️ Tech Stack
 - HTML5
-- Tailwind CSS
+- CSS
 - JavaScript
 - Machine Learning
 - Medical Image Analysis
