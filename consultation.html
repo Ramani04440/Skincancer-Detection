@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroStrata | Specialist Live</title>
+    <script src="https://cdn.tailwindcss.com\"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f1f5f9; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .blink { animation: flash 1.5s infinite alternate; }
+        @keyframes flash { 0% { opacity: 0.4; } 100% { opacity: 1; } }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 flex items-center justify-center">
+    <div class="max-w-5xl w-full grid md:grid-cols-12 gap-6">
+        
+        <div class="md:col-span-7 glass rounded-[2.5rem] p-6 flex flex-col justify-between relative overflow-hidden min-h-[50vh] md:min-h-[60vh] border-red-500/10">
+            <div class="flex justify-between items-center z-10">
+                <div class="flex items-center gap-3">
+                    <span class="h-2.5 w-2.5 rounded-full bg-red-500 blink shadow-[0_0_10px_#ef4444]"></span>
+                    <h3 class="font-bold text-sm tracking-wide uppercase">On-Call Specialist Routing Channel</h3>
+                </div>
+                <span class="text-[10px] bg-white/5 py-1.5 px-3 rounded-full font-mono text-slate-400">LATENCY: 14ms</span>
+            </div>
+
+            <div class="absolute inset-0 w-full h-full object-cover p-4 rounded-[2.5rem] overflow-hidden opacity-40">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover rounded-[2rem]">
+            </div>
+
+            <div class="mt-auto flex justify-between items-center z-10 pt-4 border-t border-white/5 bg-slate-950/40 p-4 rounded-2xl">
+                <div>
+                    <h4 class="font-bold text-sm">Dr. Jonathan Jenkins</h4>
+                    <p class="text-[10px] text-slate-400 uppercase tracking-wider">Clinical Oncology Representative</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="h-10 w-10 glass rounded-xl flex items-center justify-center text-red-400 bg-red-500/10 border-red-500/20"><i class="fas fa-microphone-slash"></i></button>
+                    <button onclick="location.href='03-dashboard.html'" class="px-5 bg-red-600 hover:bg-red-500 rounded-xl font-bold text-xs uppercase tracking-widest transition">Disconnect</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-5 glass rounded-[2.5rem] p-6 flex flex-col justify-between min-h-[40vh] md:min-h-auto">
+            <div class="flex flex-col flex-1">
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Packet Synchronizer Stream</h3>
+                <div class="flex-1 space-y-3 overflow-y-auto pr-1">
+                    <div class="bg-emerald-500/10 p-3.5 rounded-xl rounded-tl-none border border-emerald-500/10 text-xs">
+                        <p class="text-[9px] text-emerald-400 font-bold mb-1 uppercase">System Core</p>
+                        <p class="leading-relaxed">Grad-CAM structural coordinate vector stream compiled and shared with consultant endpoint portal.</p>
+                    </div>
+                    <div class="bg-white/5 p-3.5 rounded-xl rounded-tr-none border border-white/5 text-xs">
+                        <p class="text-[9px] text-slate-500 font-bold mb-1 uppercase">Dr. Jenkins</p>
+                        <p class="leading-relaxed text-slate-300">Ingesting layer model parameters now. Keep alignment grid stable over the region.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-6 border-t border-white/5 mt-4 space-y-3">
+                <input type="text" placeholder="Send network memo..." class="w-full bg-slate-950/40 border border-white/10 rounded-xl py-3 px-4 text-xs focus:outline-none focus:border-emerald-500 transition">
+                <button onclick="location.href='07-report.html'" class="w-full glass py-3.5 rounded-xl text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-white transition-all text-center block">
+                    View Pre-Compiled EHR Summary
+                </button>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
