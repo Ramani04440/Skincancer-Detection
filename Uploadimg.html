@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroStrata | Neural Analyzer</title>
+    <script src="https://cdn.tailwindcss.com\"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f1f5f9; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .scan-line { height: 3px; background: linear-gradient(to right, transparent, #10b981, transparent); animation: scan 2s linear infinite; }
+        @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 flex items-center justify-center">
+    <div class="max-w-5xl w-full grid md:grid-cols-12 gap-6">
+        
+        <div class="md:col-span-7 glass rounded-[2.5rem] p-6 md:p-8 flex flex-col justify-between min-h-[65vh]">
+            <div>
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-tight">Neural Strata Core Ingestion</h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Isolate high-resolution epidermal region metrics.</p>
+                    </div>
+                    <button onclick="location.href='03-dashboard.html'" class="h-9 w-9 glass rounded-xl flex items-center justify-center hover:bg-white/5 text-xs text-slate-400 hover:text-white transition"><i class="fas fa-xmark"></i></button>
+                </div>
+
+                <div class="relative group border-2 border-dashed border-white/5 rounded-[2rem] p-8 flex flex-col items-center justify-center min-h-[320px] bg-slate-950/20 hover:border-emerald-500/20 transition overflow-hidden">
+                    <input type="file" id="file-idx" onchange="loadTensor(event)" class="absolute inset-0 opacity-0 cursor-pointer z-10">
+                    <div id="scan-bar" class="scan-line absolute left-0 w-full hidden z-20"></div>
+                    <img id="preview" class="absolute inset-0 w-full h-full object-contain hidden p-2 rounded-[2rem]">
+                    
+                    <div id="drop-ui" class="text-center">
+                        <div class="h-14 w-14 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-4 text-slate-400 group-hover:text-emerald-400 transition"><i class="fas fa-camera text-xl"></i></div>
+                        <p class="text-sm font-bold">Incorporate Lesion Graph</p>
+                        <p class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider">Supports Dermoscopic Feed, PNG, JPEG</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex gap-4">
+                <button onclick="location.href='03-dashboard.html'" class="flex-1 py-4 glass rounded-xl text-xs font-bold tracking-widest uppercase hover:bg-white/5 transition text-slate-400">Back out</button>
+                <button id="run-btn" onclick="runSimulation()" class="flex-1 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold tracking-widest uppercase transition-all shadow-lg shadow-emerald-500/10">Initialize Scan Engine</button>
+            </div>
+        </div>
+
+        <div class="md:col-span-5 glass rounded-[2.5rem] p-6 flex flex-col bg-slate-950/40 border-white/5 min-h-[45vh] md:min-h-auto">
+            <h4 class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-2">
+                <i class="fas fa-terminal text-[10px] text-emerald-400"></i> Processing Stream Log
+            </h4>
+            <div id="console" class="flex-1 mono text-[11px] text-emerald-400/80 space-y-2 overflow-y-auto leading-relaxed bg-black/30 p-4 rounded-xl border border-white/5 scrollbar-none">
+                <p class="text-slate-500">[System] Neural layer analyzer ready for ingestion matrix...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const pre = document.getElementById('preview');
+        const dui = document.getElementById('drop-ui');
+        const consoleEl = document.getElementById('console');
+        const line = document.getElementById('scan-bar');
+        const runBtn = document.getElementById('run-btn');
+        const fileIn = document.getElementById('file-idx');
+
+        function addLog(msg) {
+            consoleEl.innerHTML += `<p class="mt-1">${msg}</p>`;
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        function loadTensor(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const r = new FileReader();
+                r.onload = function(ex) {
+                    pre.src = ex.target.result;
+                    pre.classList.remove('hidden');
+                    dui.classList.add('hidden');
+                    addLog(`[File] Loaded tensor structure: <b>${file.name}</b> (${Math.round(file.size/1024)} KB)`);
+                    addLog("[Core] Spatial grid resolution normalized to 224x224 input space.");
+                }
+                r.readAsDataURL(file);
+            }
+        }
+
+        function runSimulation() {
+            if(!pre.src) {
+                addLog("<span class='text-red-400'>[Error] Structural dependency missing. Ingest image input first.</span>");
+                return;
+            }
+            line.classList.remove('hidden');
+            runBtn.disabled = true;
+            runBtn.classList.replace('bg-emerald-600', 'bg-slate-800');
+            runBtn.innerHTML = `COMPUTING STRATA <i class="fas fa-sync fa-spin ml-2"></i>`;
+            
+            setTimeout(() => addLog("[Compute] Resolving deep convolutional layers..."), 600);
+            setTimeout(() => addLog("[ABCD] Analyzing asymmetry indices and margin properties..."), 1300);
+            setTimeout(() => addLog("[ABCD] Calculating localized color variances against benchmark weights..."), 2100);
+            setTimeout(() => addLog("[Cross] Referencing global parameters inside HAM10000 archive..."), 2900);
+            setTimeout(() => addLog("<span class='text-white font-bold'>[Pipeline] Computation stable. Mapping triage routing...</span>"), 3600);
+
+            // DYNAMIC ROUTING ENGINE DEMO SETUP
+            setTimeout(() => {
+                const fname = fileIn.files[0] ? fileIn.files[0].name.toLowerCase() : '';
+                if (fname.includes('risk') || fname.includes('cancer') || fname.includes('malignant') || fname.includes('mole')) {
+                    window.location.href = '06-res.html';
+                } else {
+                    window.location.href = '05-result.html';
+                }
+            }, 4300);
+        }
+    </script>
+</body>
+</html>
