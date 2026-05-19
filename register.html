@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroStrata | Secure Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .input-style { width: 100%; background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1rem; padding: 0.8rem 1rem; outline: none; transition: 0.3s; font-size: 0.9rem; color: #f1f5f9; }
+        .input-style:focus { border-color: #10b981; background: rgba(16, 185, 129, 0.05); }
+        .tab-active { background: #10b981; color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
+        .text-strata {
+            background: linear-gradient(to bottom, #10b981 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-[#020617] text-slate-100 min-h-screen flex items-center justify-center p-6">
+    
+    <div class="w-full max-w-[550px]">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-bold tracking-tighter uppercase">NEURO<span class="text-strata">STRATA</span></h1>
+            <p class="text-slate-500 text-sm mt-1">Join the digital dermal intelligence network</p>
+        </div>
+
+        <div class="glass p-8 rounded-[3rem] shadow-2xl">
+            <div class="flex bg-slate-900/60 p-1.5 rounded-2xl mb-8">
+                <button id="patientTab" type="button" onclick="setRole('patient')" class="flex-1 py-3 rounded-xl text-xs font-bold transition-all tab-active">
+                    <i class="fas fa-user-injured mr-2"></i> PATIENT
+                </button>
+                <button id="doctorTab" type="button" onclick="setRole('doctor')" class="flex-1 py-3 rounded-xl text-xs font-bold transition-all text-slate-500">
+                    <i class="fas fa-user-md mr-2"></i> PRACTITIONER
+                </button>
+            </div>
+
+            <form class="space-y-5">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1.5">
+                        <label class="text-[10px] font-bold text-slate-500 uppercase ml-1">First Name</label>
+                        <input type="text" class="input-style" placeholder="Jane" required>
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-[10px] font-bold text-slate-500 uppercase ml-1">Last Name</label>
+                        <input type="text" class="input-style" placeholder="Doe" required>
+                    </div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-slate-500 uppercase ml-1">Email Address</label>
+                    <input type="email" class="input-style" placeholder="jane.doe@example.com" required>
+                </div>
+
+                <div id="dynamicFieldContainer" class="space-y-1.5">
+                    <label id="dynamicLabel" class="text-[10px] font-bold text-slate-500 uppercase ml-1">Government ID / SSN</label>
+                    <input type="text" id="dynamicInput" class="input-style" placeholder="XXX-XX-XXXX">
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-[10px] font-bold text-slate-500 uppercase ml-1">Create Password</label>
+                    <div class="relative">
+                        <input type="password" id="passwordInput" class="input-style" placeholder="••••••••" required>
+                        <i onclick="togglePasswordVisibility()" class="fas fa-eye absolute right-4 top-1/2 -translate-y-1/2 text-slate-600 cursor-pointer hover:text-slate-400 transition"></i>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3 px-1 py-2">
+                    <input type="checkbox" class="mt-1 accent-emerald-500 h-4 w-4 shadow-sm" required>
+                    <p class="text-[10px] text-slate-500 leading-normal">
+                        I agree to the <a href="privacy policy.html" class="text-emerald-500 font-bold hover:underline">Health Data Privacy Policy</a>. I understand my diagnostic data will be securely processed under strict DPDP / HIPAA standards.
+                    </p>
+                </div>
+
+                <button type="button" onclick="location.href='01-user.html'" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-2xl transition-all shadow-lg shadow-emerald-900/20 flex items-center justify-center gap-2">
+                    REGISTER ACCOUNT <i class="fas fa-user-plus text-xs"></i>
+                </button>
+            </form>
+
+            <div class="mt-8 pt-6 border-t border-white/5 text-center flex flex-col gap-2">
+                <p class="text-xs text-slate-500">
+                    Already have an account? <a href="login.html" class="text-emerald-500 font-bold hover:underline">Log In</a>
+                </p>
+                <a href="index.html" class="text-[10px] text-slate-600 hover:text-slate-400 font-medium uppercase tracking-wider transition-all">
+                    <i class="fas fa-arrow-left text-[8px] mr-1"></i> Back to Main Splash
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setRole(role) {
+            const pTab = document.getElementById('patientTab');
+            const dTab = document.getElementById('doctorTab');
+            const dLabel = document.getElementById('dynamicLabel');
+            const dInput = document.getElementById('dynamicInput');
+
+            if(role === 'patient') {
+                pTab.classList.add('tab-active'); pTab.classList.remove('text-slate-500');
+                dTab.classList.remove('tab-active'); dTab.classList.add('text-slate-500');
+                dLabel.innerText = "Government ID / SSN";
+                dInput.placeholder = "XXX-XX-XXXX";
+            } else {
+                dTab.classList.add('tab-active'); dTab.classList.remove('text-slate-500');
+                pTab.classList.remove('tab-active'); pTab.classList.add('text-slate-500');
+                dLabel.innerText = "Medical License Number (NPI)";
+                dInput.placeholder = "MED-12345678";
+            }
+        }
+
+        function togglePasswordVisibility() {
+            const pwd = document.getElementById('passwordInput');
+            if (pwd.type === "password") {
+                pwd.type = "text";
+            } else {
+                pwd.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
