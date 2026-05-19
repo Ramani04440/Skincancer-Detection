@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Governance & Privacy | NeuroStrata AI</title>
+    <script src="https://cdn.tailwindcss.com\"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f1f5f9; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .policy-card { border-left: 2px solid #10b981; padding-left: 1.25rem; }
+    </style>
+</head>
+<body class="p-4 md:p-12 min-h-screen flex items-center justify-center">
+    <div class="max-w-3xl w-full glass rounded-[2.5rem] p-6 md:p-10 space-y-8">
+        
+        <div class="flex justify-between items-start border-b border-white/5 pb-6">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight">Data Governance Structure</h1>
+                <p class="text-xs text-slate-400 mt-1">Regulatory Enforcements & Personal Privacy Architectures</p>
+            </div>
+            <button onclick="location.href='03-dashboard.html'" class="h-9 w-9 glass rounded-xl flex items-center justify-center text-slate-400 hover:text-white transition"><i class="fas fa-arrow-left text-xs"></i></button>
+        </div>
+
+        <div class="space-y-6 text-xs leading-relaxed">
+            <div class="policy-card">
+                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">1. Absolute Consent Architecture</h3>
+                <p class="text-slate-400">In strict accordance with the Digital Personal Data Protection (DPDP) Act legal requirements, no pixel array transmission, diagnostic processing loop, or history mapping protocol will trigger before explicit confirmation is granted on the onboarding page.</p>
+            </div>
+
+            <div class="policy-card">
+                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">2. Cryptographic Envelope Guardrails</h3>
+                <p class="text-slate-400">All consumer identity parameters, administrative data vectors, and uploaded high-resolution imagery assets are immediately structured inside hardware-level AES-256 bit encrypted storage nodes. Communications across remote endpoints rely strictly on Transport Layer Security (TLS 1.3).</p>
+            </div>
+
+            <div class="policy-card">
+                <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider mb-1">3. Differential Privacy Frameworks</h3>
+                <p class="text-slate-400">During any subsequent training iterations meant to improve our central Convolutional Neural Network models, data transformation algorithms apply aggressive mathematical noise. This strips all identifying meta-tags, turning images into abstract, untraceable feature weights.</p>
+            </div>
+        </div>
+
+        <div class="pt-6 border-t border-white/5 flex">
+            <button onclick="location.href='03-dashboard.html'" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition shadow-lg shadow-emerald-500/10">
+                Acknowledge Framework Governance
+            </button>
+        </div>
+    </div>
+</body>
+</html>
