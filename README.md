@@ -9,7 +9,6 @@
 - 📊 Interactive diagnostic dashboard
 - 📄 Automated clinical report generation
 - 🎥 Tele-dermatology consultation portal
-- 🔐 HIPAA & DPDP aligned privacy workflow
 
 ### 🛠️ Tech Stack
 - HTML5
